@@ -17,6 +17,7 @@ def averageGain(dataset, attribute):
     weighted = 0.0
     for v in attribute.values:
         subset = select(dataset, attribute, v)
+        #print("Entropy of subnset value = %d:" %(v),entropy(subset))
         weighted += entropy(subset) * len(subset)
     return entropy(dataset) - weighted/len(dataset)
 
